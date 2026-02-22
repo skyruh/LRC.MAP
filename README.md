@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JIIT LRC Map 📚
 
-## Getting Started
+### What is this?
+Ever spent 20 minutes looking for a book in the JIIT library only to realize it's in a completely different corner? Yeah, same. 
 
-First, run the development server:
+This project is a quick-and-dirty way to search for books and see exactly which shelf they are on. It's not "enterprise ready" or "industry grade" — it’s just something that works.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Live Site
+You can use the portal right here: [**https://lrc-map.vercel.app/**](https://lrc-map.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### How it works:
+1. **Scraper**: A Python script (in the old parent repo) crawled the library collection to grab book names and shelf numbers.
+2. **Database**: A Supabase setup stores the 47k+ books so searching is fast.
+3. **Web Portal**: This Next.js site where you can type a book name and see the map.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Setup (The TL;DR version)
+If you want to run this locally:
+- Clone the repo.
+- Run `npm install`.
+- Set up your `.env.local` with Supabase keys.
+- Run `npm run dev`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Disclaimer
+I made this to save time. If the library reshuffles all their books next week, the map will be wrong until the database is updated.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Happy hunting! 📖
